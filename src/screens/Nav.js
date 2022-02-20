@@ -17,6 +17,7 @@ const NavBar=()=>{
     <nav className="navbar">
       <div className="navbaritems">
           <ul>
+            <li key={0}><Link to={'/'}>HOME</Link></li>
           {MenuItems.map((item) => {
               const {id,title,url} = item;
               return (
