@@ -26,7 +26,6 @@ export default function ConfirmationPage(){
         axios.post('https://emartserver.herokuapp.com/api/orders', newOrder)
         // console.log(newOrder);
         navigate('/')
-        window.location.reload(false);
         dispatch(emptyCart(cartItems)) 
     }
 
