@@ -8,6 +8,7 @@ import { SliderData } from "./SliderData";
 import { useState } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import Title from "./Title";
+import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
 export default function LoadItems(){
@@ -81,7 +82,7 @@ export default function LoadItems(){
                 HPItems.map((item)=>{
                 const {_id,img, ItemName, AvailableIn, PageLink} = item;  
                 return(
-                    <a href={PageLink} className="HomeItem">
+                    <Link to={PageLink} className="HomeItem">
                     <div key={_id}>
                         <div className="product" key={_id}>
                             <img src={img}></img>
@@ -89,7 +90,7 @@ export default function LoadItems(){
                             <h4>Available in: {AvailableIn}</h4>
                         </div>
                     </div>
-                    </a>
+                    </Link>
                 )
                 
                 })}
