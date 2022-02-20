@@ -120,7 +120,7 @@ export default function LoadItems(){
                                     <h3>Feedback</h3>
                                     <i>Your feedback will be helpful for us to improve the website :)</i>
                                     <br></br>
-                                    <a href="/feedback">Feedback</a>
+                                    <Link to="/feedback">Feedback</Link>
                                 </div>
                             </th>
                         </tr>
