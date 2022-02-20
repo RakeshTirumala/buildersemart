@@ -1,0 +1,2 @@
+export const CONFIRM_ORDER = "CONFIRM_ORDER" 
+export const CLEAR_ORDER_NEXT = "CLEAR_ORDER_NEXT"
