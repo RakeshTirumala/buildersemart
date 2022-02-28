@@ -22,7 +22,7 @@ const NavBar=()=>{
               const {id,title,url} = item;
               return (
                   <li key={id}>
-                    <a href={url}>{title}</a>
+                    <Link to={url}>{title}</Link>
                     </li>
                     
           )
