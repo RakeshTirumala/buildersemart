@@ -145,7 +145,7 @@ font-size: medium;
 }
 @media screen {
   .productslist {
-    grid-template-columns: repeat(4, 16rem);
+    grid-template-columns: repeat(4, 1fr);
     
   }
 }
@@ -1086,4 +1086,11 @@ h1 {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 600;
   font-style: italic;
+}
+
+.confirm-btn{
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: medium;
 }

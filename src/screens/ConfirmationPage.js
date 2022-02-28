@@ -25,7 +25,6 @@ export default function ConfirmationPage(){
         const newOrder = {id:id,name:name,email:email_inp, phoneNo:phno_inp,date:date,orderedItems:cartItems, isDone:false};
         axios.post('https://emartserver.herokuapp.com/api/orders', newOrder)
         // console.log(newOrder);
-        navigate('/')
         dispatch(emptyCart(cartItems)) 
     }
 
@@ -71,9 +70,9 @@ export default function ConfirmationPage(){
                     >
                     </input>
                     <br/>
-                    <button type="button" 
+                    <a href='/'><button type="button" 
                     className="conf_btn" 
-                    onClick={()=>addToDb(name,email_inp,phno_inp,date)}>Confirm</button>
+                    onClick={()=>addToDb(name,email_inp,phno_inp,date)}>Confirm</button></a>
                     
                     <p className="confirm-parah">we will send the details to your mail or phone number once you click confirm</p>
                 </form>

@@ -17,12 +17,12 @@ const NavBar=()=>{
     <nav className="navbar">
       <div className="navbaritems">
           <ul>
-            <li key={0}><Link to={'/'}>HOME</Link></li>
+            {/* <li key={0}><a href='/'>HOME</a></li> */}
           {MenuItems.map((item) => {
               const {id,title,url} = item;
               return (
                   <li key={id}>
-                    <Link to={url}>{title}</Link>
+                    <a href={url}>{title}</a>
                     </li>
                     
           )

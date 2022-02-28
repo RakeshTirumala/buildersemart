@@ -1,10 +1,10 @@
 
 export const MenuItems = [
-    // {
-    //     id:'0',
-    //     title: 'HOME',
-    //     url :'/',
-    // },
+    {
+        id:'0',
+        title: 'HOME',
+        url : '/',
+    },
         {
         id:'1',
         title: 'AGGREGATES',
