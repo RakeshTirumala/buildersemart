@@ -10,6 +10,8 @@ import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import Title from "./Title";
 import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
+import useWindowSize from "./WindowSize";
+import NavBar from "./Nav.js";
 
 export default function LoadItems(){
     const dispatch = useDispatch()
@@ -39,6 +41,8 @@ export default function LoadItems(){
         setCurrent(current === 0 ? length-1 : current-1)
     }
 
+    const { width } = useWindowSize();
+
     // let autoScroll = true;
     // let slideInterval;
     // let intervalTime = 7000;
@@ -57,8 +61,8 @@ export default function LoadItems(){
     return (
         <>
         <Title/>
-        <Nav/>
-        <section className="slider"> 
+        <NavBar/>
+        {/* <section className="slider"> 
             <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide}/>
             <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide}/>
             {
@@ -74,28 +78,97 @@ export default function LoadItems(){
                     )
                 })
             }
-        </section>
+        </section> */}
+        {
+            width>=950
+            ?(
+            
+            <section className="slider"> 
+                <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide}/>
+                <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide}/>
+                {
+                    SliderData.map((img, index)=>{
+                        return(
+                            <div className={index === current ? 'slide active' : 'slide'} key={index}>
+                                {
+                                    index === current && (
+                                        <img alt="Loading..." src={img.image} className="sld-image"></img>
+                                    )
+                                }
+                            </div>
+                        )
+                    })
+                }
+            </section>
+            )
+            :(
+                <section className="slider-ph"> 
+                <FaArrowAltCircleLeft className="left-arrow-ph" onClick={prevSlide}/>
+                <FaArrowAltCircleRight className="right-arrow-ph" onClick={nextSlide}/>
+                {
+                    SliderData.map((img, index)=>{
+                        return(
+                            <div className={index === current ? 'slide active' : 'slide'} key={index}>
+                                {
+                                    index === current && (
+                                        <img alt="Loading..." src={img.image} className="sld-image-ph"></img>
+                                    )
+                                }
+                            </div>
+                        )
+                    })
+                }
+            </section>
+            )
+        }
         <div className="HomeItemsDiv">
         <h1 className="material-tag">~ Material ~</h1>
-            <section className="productslist">
                 {
-                HPItems.map((item)=>{
-                const {_id,img, ItemName, AvailableIn, PageLink} = item;  
-                return(
-                    <Link to={PageLink} className="HomeItem">
-                    <div key={_id}>
-                        <div className="product" key={_id}>
-                            <img src={img}></img>
-                            <h1>{ItemName}</h1>
-                            <h4>Available in: {AvailableIn}</h4>
-                        </div>
-                    </div>
-                    </Link>
-                )
+                    width>=950
+                    ?(
+                        <section className="productslist">
+                            {
+                                HPItems.map((item)=>{
+                                    const {_id,img, ItemName, AvailableIn, PageLink} = item;  
+                                    return(
+                                        <Link to={PageLink} className="HomeItem">
+                                        <div key={_id}>
+                                            <div className="product" key={_id}>
+                                                <img src={img}></img>
+                                                <h1>{ItemName}</h1>
+                                                <h4>Available in: {AvailableIn}</h4>
+                                            </div>
+                                        </div>
+                                        </Link>
+                                    )
+                                    })
+                            }
+                        </section>
+                    )
+                    :(
+                        <center>
+                            <section className="productslist2">
+                                {
+                                    HPItems.map((item)=>{
+                                        const {_id,img, ItemName, AvailableIn, PageLink} = item;  
+                                        return(
+                                            <Link to={PageLink} className="HomeItem2">
+                                            <div key={_id}>
+                                                <div className="product2" key={_id}>
+                                                    <img src={img}></img>
+                                                    <h1>{ItemName}</h1>
+                                                    <h4>Available in: {AvailableIn}</h4>
+                                                </div>
+                                            </div>
+                                            </Link>
+                                        )
+                                        })
+                                }
+                            </section>
+                        </center>
+                    )
+                }
                 
-                })}
-                
-            </section>
         </div>
         <section className="bottom-info">
             <center>

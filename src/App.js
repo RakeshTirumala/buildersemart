@@ -19,9 +19,8 @@ import BBItemScreen from './screens/BricksBlocksItem.js';
 // import Title from './screens/Title.js';
 import FeedbackPage from './screens/FeedbackPage.js';
 import ConfirmationPage from './screens/ConfirmationPage.js';
-
-
 function App() {
+  
   return (
     <BrowserRouter>
       <Routes>
