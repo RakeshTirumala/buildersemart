@@ -182,7 +182,7 @@ font-size: medium;
 /* bigscreens */
 @media screen {
   .productslist {
-    grid-template-columns: repeat(3, 25rem);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
