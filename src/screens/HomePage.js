@@ -129,55 +129,24 @@ export default function LoadItems(){
                     width>=950
                     ?(
                         <>
-                        <center className="productslist">
-                            {
-                                HPItems.map((item)=>{
-                                    const {_id,img, ItemName, AvailableIn, PageLink} = item;  
-                                    return(
-                                        <Link to={PageLink} className="HomeItem">
-                                        <div key={_id}>
-                                            <div className="product" key={_id}>
-                                                <img src={img}></img>
-                                                <h1>{ItemName}</h1>
-                                                <h4>Available in: {AvailableIn}</h4>
+                            <center className="productslist">
+                                {
+                                    HPItems.map((item)=>{
+                                        const {_id,img, ItemName, AvailableIn, PageLink} = item;  
+                                        return(
+                                            <Link to={PageLink} className="HomeItem">
+                                            <div key={_id}>
+                                                <div className="product" key={_id}>
+                                                    <img src={img}></img>
+                                                    <h1>{ItemName}</h1>
+                                                    <h4>Available in: {AvailableIn}</h4>
+                                                </div>
                                             </div>
-                                        </div>
-                                        </Link>
-                                    )
-                                    })
-                            }
-                        </center>
-                        <section className="bottom-info">
-                        <center>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <th>
-                                            <div className="comp-address">
-                                                <h3>Company Address:</h3>
-                                                <p>Door No: 10-11-175/RF3, Venkateshwara colony, Hyderabad</p>
-                                            </div>
-                                        </th>
-                                        <th>
-                                            <div className="comp-address">
-                                                <h3>Customer Service</h3>
-                                                <p>Email: buildersemart@gmail.com</p>
-                                                <p>Ph.no: +91 9441144566</p>
-                                            </div>
-                                        </th>
-                                        <th>
-                                            <div className="comp-address">
-                                                <h3>Feedback</h3>
-                                                <i>Your feedback will be helpful for us to improve the website :)</i>
-                                                <br></br>
-                                                <Link to="/feedback">Feedback</Link>
-                                            </div>
-                                        </th>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </center>
-                    </section>
+                                            </Link>
+                                        )
+                                        })
+                                }
+                            </center>
                     </>
                     )
                     :(
@@ -202,46 +171,84 @@ export default function LoadItems(){
                                 }
                             </section>
                         </center>
-                        <section className="bottom-info-2">
-                            <center>
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <th>
-                                                <div className="comp-address">
-                                                    <h3>Company Address:</h3>
-                                                    <p>Door No: 10-11-175/RF3, Venkateshwara colony, Hyderabad</p>
-                                                </div>
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <div className="comp-address">
-                                                    <h3>Customer Service</h3>
-                                                    <p>Email: buildersemart@gmail.com</p>
-                                                    <p>Ph.no: +91 9441144566</p>
-                                                </div>
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <div className="comp-address">
-                                                    <h3>Feedback</h3>
-                                                    <i>Your feedback will be helpful for us to improve the website :)</i>
-                                                    <br></br>
-                                                    <Link to="/feedback">Feedback</Link>
-                                                </div>
-                                            </th>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </center>
-                        </section>
                         </>
                     )
                 }
                 
         </div>
+        {
+            width>=960
+            ?(
+                <section className="bottom-info">
+                <center>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <div className="comp-address">
+                                        <h3>Company Address:</h3>
+                                        <p>Door No: 10-11-175/RF3, Venkateshwara colony, Hyderabad</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div className="comp-address">
+                                        <h3>Customer Service</h3>
+                                        <p>Email: buildersemart@gmail.com</p>
+                                        <p>Ph.no: +91 9441144566</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div className="comp-address">
+                                        <h3>Feedback</h3>
+                                        <i>Your feedback will be helpful for us to improve the website :)</i>
+                                        <br></br>
+                                        <Link to="/feedback">Feedback</Link>
+                                    </div>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </center>
+                </section>
+            )
+            :(
+                <section className="bottom-info-2">
+                <center>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <div className="comp-address">
+                                        <h3>Company Address:</h3>
+                                        <p>Door No: 10-11-175/RF3, Venkateshwara colony, Hyderabad</p>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div className="comp-address">
+                                        <h3>Customer Service</h3>
+                                        <p>Email: buildersemart@gmail.com</p>
+                                        <p>Ph.no: +91 9441144566</p>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div className="comp-address">
+                                        <h3>Feedback</h3>
+                                        <i>Your feedback will be helpful for us to improve the website :)</i>
+                                        <br></br>
+                                        <Link to="/feedback">Feedback</Link>
+                                    </div>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </center>
+            </section>
+            )
+        }
         {/* <section className="bottom-info">
             <center>
                 <table>

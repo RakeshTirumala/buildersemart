@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import '../index.css'
 import { MenuItems } from './NavMenu'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, Route, Routes, useNavigate } from 'react-router-dom'
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import useWindowSize from "./WindowSize";
 import { FaBars} from 'react-icons/fa';
+import Agg from './AggregatesPage';
+import LoadItems from './HomePage';
+import CementPage from './cementPage';
+import SteelPage from './steelPage';
+import BricksBlocksPage from './BricksBlocksPage';
 
 
 const NavBar=()=>{
@@ -18,7 +23,7 @@ const NavBar=()=>{
     navigate('/yourrfq', {state:{id:"", details:"", loc:"", comp:"", B:""}})
   }
   const { width } = useWindowSize();
-
+ 
 
   return(
     width >=950
@@ -31,9 +36,9 @@ const NavBar=()=>{
               {MenuItems.map((item) => {
                   const {id,title,url} = item;
                   return (
-                    <li key={id}>
+                      <li key={id}>
                       <Link to={url}>{title}</Link>
-                      </li>      
+                      </li> 
                     )
             })}
             <li key={7}>
