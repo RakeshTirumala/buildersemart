@@ -39,7 +39,7 @@ export default function CmtItemScreen(){
             <table className="item_table" key={CMTdata._id}>
                 <tbody>
                     <tr>
-                        <th><img src={CMTdata.img_link} className="cmt-itemscr-img" alt="Loading..."></img></th>
+                        <th><img src={CMTdata.img_link} className="cmt-itemscr-img" alt="Sorry, image not found!"></img></th>
                         <th className="col2">
                             <h1 className="col2">{CMTdata.item_name}</h1>
                             <p className="agg_p1">Enter the Required no. of Bags:</p>

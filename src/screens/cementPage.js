@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from './Nav.js'
 import Title from './Title.js';
-
+import AltCmt from '../images/AltCmt.jpeg'
 
 export default function CementPage(){
     const [cmtData, setcmtData] = useState(null);
@@ -52,7 +52,8 @@ const Item = (props)=>{
     
     return (
         <div className="Item">
-            <img src={img_link} alt="Loading..."></img>
+            <img src={img_link} alt="Sorry, image not found!">
+            </img>
     
             <h1>{item_name}</h1>
     

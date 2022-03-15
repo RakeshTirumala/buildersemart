@@ -1,9 +1,11 @@
-import companyLogo from '../images/companyLogo.png'
+// import companyLogo from '../images/companyLogo.png'
+import Logo from '../images/Logo.png'
+
 const companyData = {
     aggComp:[
         {
-            img:companyLogo,
-            compName:"BuildersEmart"
+            img:Logo,
+            compName:"HSC"
         }
     ],
     cmtComp:[

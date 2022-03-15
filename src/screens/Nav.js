@@ -9,7 +9,7 @@ import { FaBars} from 'react-icons/fa';
 
 const NavBar=()=>{
 
-  const [sideBar, setSideBar] = useState(false)
+  const [sideBar, setSideBar] = useState(true)
 
   const showSidebar = () => setSideBar(!sideBar)
 
@@ -50,7 +50,7 @@ const NavBar=()=>{
           <FaBars onClick={showSidebar} className="navbar-icon"/>
         </div>
         {
-          sideBar==false
+          sideBar===false
           ?(
             <nav className={sideBar ? 'nav-menu active' : 'nav-menu'}>
             <ul>
