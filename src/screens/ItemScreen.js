@@ -34,13 +34,19 @@ export default function ItemScreen(){
     } 
 
     // console.log("aggdata",AGGdata)
+    var Width;
     const { width } = useWindowSize();
+    
+    useEffect(()=>{
+        Width = width
+    }, []) 
+
     return (
         <>
         <Title/>
         <NavBar/>
         {
-            width>=950
+            Width>=950
             ?(
                 <>
                 <table className="item_table" key={AGGdata._id}>

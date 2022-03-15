@@ -43,8 +43,14 @@ export default function LoadItems(){
         setCurrent(current === 0 ? length-1 : current-1)
     }
 
+ 
+    var Width;
     const { width } = useWindowSize();
     
+    useEffect(()=>{
+        Width = width
+    }, [Width])
+
 
     // let autoScroll = true;
     // let slideInterval;
@@ -65,25 +71,8 @@ export default function LoadItems(){
         <>
         <Title/>
         <NavBar/>
-        {/* <section className="slider"> 
-            <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide}/>
-            <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide}/>
-            {
-                SliderData.map((img, index)=>{
-                    return(
-                        <div className={index === current ? 'slide active' : 'slide'} key={index}>
-                            {
-                                index === current && (
-                                    <img alt="Loading..." src={img.image} className="sld-image"></img>
-                                )
-                            }
-                        </div>
-                    )
-                })
-            }
-        </section> */}
         {
-            width>=950
+            Width>=950
             ?(
             <section className="slider"> 
                 <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide}/>
@@ -105,28 +94,28 @@ export default function LoadItems(){
             )
             :(
                 <section className="slider-ph"> 
-                <FaArrowAltCircleLeft className="left-arrow-ph" onClick={prevSlide}/>
-                <FaArrowAltCircleRight className="right-arrow-ph" onClick={nextSlide}/>
-                {
-                    SliderData.map((img, index)=>{
-                        return(
-                            <div className={index === current ? 'slide active' : 'slide'} key={index}>
-                                {
-                                    index === current && (
-                                        <img alt="Loading..." src={img.image} className="sld-image-ph"></img>
-                                    )
-                                }
-                            </div>
-                        )
-                    })
-                }
-            </section>
+                    <FaArrowAltCircleLeft className="left-arrow-ph" onClick={prevSlide}/>
+                    <FaArrowAltCircleRight className="right-arrow-ph" onClick={nextSlide}/>
+                    {
+                        SliderData.map((img, index)=>{
+                            return(
+                                <div className={index === current ? 'slide active' : 'slide'} key={index}>
+                                    {
+                                        index === current && (
+                                            <img alt="Loading..." src={img.image} className="sld-image-ph"></img>
+                                        )
+                                    }
+                                </div>
+                            )
+                        })
+                    }
+                </section>
             )
         }
         <div className="HomeItemsDiv">
         <h1 className="material-tag">~ Material ~</h1>
                 {
-                    width>=950
+                    Width>=950
                     ?(
                         <>
                             <center className="productslist">
@@ -177,7 +166,7 @@ export default function LoadItems(){
                 
         </div>
         {
-            width>=960
+            Width>=960
             ?(
                 <section className="bottom-info">
                 <center>

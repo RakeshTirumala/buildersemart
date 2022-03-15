@@ -25,14 +25,21 @@ const Agg=()=>{
   },[])
 
   const AGGdata = useSelector((state)=>state.allItems.items) 
+
+  var Width;
   const { width } = useWindowSize();
+  
+    
+  useEffect(()=>{
+      Width = width
+  }, [Width])
 
   return (
     <>
     <Title/>
     <NavBar/>
     {
-      width>=950
+      Width>=950
       ?(
         <>
           <h1 className='agg-title'>Aggregates</h1>

@@ -1,15 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../index.css'
 import { MenuItems } from './NavMenu'
 import { Link, Route, Routes, useNavigate } from 'react-router-dom'
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import useWindowSize from "./WindowSize";
 import { FaBars} from 'react-icons/fa';
-import Agg from './AggregatesPage';
-import LoadItems from './HomePage';
-import CementPage from './cementPage';
-import SteelPage from './steelPage';
-import BricksBlocksPage from './BricksBlocksPage';
 
 
 const NavBar=()=>{
@@ -22,11 +17,16 @@ const NavBar=()=>{
   const HandleRfqPage=()=>{
     navigate('/yourrfq', {state:{id:"", details:"", loc:"", comp:"", B:""}})
   }
+
+  var Width;
   const { width } = useWindowSize();
- 
+    
+  useEffect(()=>{
+      Width = width
+  }, []) 
 
   return(
-    width >=950
+    Width >=950
     ?(
       <>
         <nav className="navbar">
