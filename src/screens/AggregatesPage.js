@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../index.css'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,13 +26,15 @@ const Agg=()=>{
 
   const AGGdata = useSelector((state)=>state.allItems.items) 
 
-  var Width;
+  var [Width,SetWidth] = useState(1200);
   const { width } = useWindowSize();
-  
-    
+
   useEffect(()=>{
-      Width = width
-  }, [Width])
+      if(width<950){
+          SetWidth(width)
+      }
+
+  }, [SetWidth, width])
 
   return (
     <>

@@ -44,12 +44,16 @@ export default function LoadItems(){
     }
 
  
-    var Width;
+    var [Width,SetWidth] = useState(1200);
     const { width } = useWindowSize();
-    
+
     useEffect(()=>{
-        Width = width
-    }, [Width])
+        if(width<950){
+            SetWidth(width)
+        }
+
+    }, [SetWidth, width])
+
 
 
     // let autoScroll = true;

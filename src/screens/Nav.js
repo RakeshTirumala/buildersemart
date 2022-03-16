@@ -18,12 +18,15 @@ const NavBar=()=>{
     navigate('/yourrfq', {state:{id:"", details:"", loc:"", comp:"", B:""}})
   }
 
-  var Width;
+  var [Width,SetWidth] = useState(1200);
   const { width } = useWindowSize();
-    
+
   useEffect(()=>{
-      Width = width
-  }, []) 
+      if(width<950){
+          SetWidth(width)
+      }
+
+  }, [SetWidth, width])
 
   return(
     Width >=950

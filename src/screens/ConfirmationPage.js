@@ -53,7 +53,7 @@ export default function ConfirmationPage(){
                     onChange={(e)=>setemail_inp(e.target.value)}
                     ></input>
                     <h3>Phone number</h3>
-                    <input type={"phonenumber"} className="phno_inp"
+                    <input type="tel" className="phno_inp"
                     id="phno_inp" 
                     name="phno_inp"
                     value={phno_inp}
