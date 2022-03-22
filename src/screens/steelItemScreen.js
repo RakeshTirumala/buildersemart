@@ -189,7 +189,7 @@ export default function SteelItemScreen(){
                             id="inputValue3"
                             name="inputValue3"
                             value={inputValue3}
-                            onChange={inputValue3}
+                            onChange={(e)=>setinputValue3(e.target.value)}
                             >
                             </input>
                             <br/>
