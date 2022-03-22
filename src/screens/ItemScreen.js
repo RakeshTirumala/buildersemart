@@ -35,14 +35,11 @@ export default function ItemScreen(){
 
     // console.log("aggdata",AGGdata)
 
-    var [Width,SetWidth] = useState(1200);
+    var [Width,SetWidth] = useState(500);
     const { width } = useWindowSize();
 
     useEffect(()=>{
-        if(width<950){
-            SetWidth(width)
-        }
-
+        SetWidth(width)
     }, [SetWidth, width])
 
     return (

@@ -26,14 +26,13 @@ const Agg=()=>{
 
   const AGGdata = useSelector((state)=>state.allItems.items) 
 
-  var [Width,SetWidth] = useState(1200);
   const { width } = useWindowSize();
+  var [Width,SetWidth] = useState(width);
 
   useEffect(()=>{
       if(width<950){
           SetWidth(width)
       }
-
   }, [SetWidth, width])
 
   return (

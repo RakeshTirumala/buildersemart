@@ -18,24 +18,23 @@ const NavBar=()=>{
     navigate('/yourrfq', {state:{id:"", details:"", loc:"", comp:"", B:""}})
   }
 
-  var [Width,SetWidth] = useState(1200);
-  const { width } = useWindowSize();
+  // var [Width,SetWidth] = useState(500);
+  // const { width } = useWindowSize();
 
-  useEffect(()=>{
-      if(width<950){
-          SetWidth(width)
-      }
+  // useEffect(()=>{
+  //   SetWidth(width)
+  // }, [SetWidth, width])
 
-  }, [SetWidth, width])
+  const mediaQuery = window.matchMedia('(min-width: 400px)')
 
   return(
-    Width >=950
+    mediaQuery.matches
     ?(
       <>
         <nav className="navbar">
           <div className="navbaritems">
               <ul>
-                <li key={0}><a href='/'>HOME</a></li>
+                {/* <li key={0}><a href='/'>HOME</a></li> */}
               {MenuItems.map((item) => {
                   const {id,title,url} = item;
                   return (
@@ -62,7 +61,7 @@ const NavBar=()=>{
           ?(
             <nav className={sideBar ? 'nav-menu active' : 'nav-menu'}>
             <ul>
-            <li key={0}><a href='/' className="nav-homelink">HOME</a></li>
+            {/* <li key={0}><a href='/' className="nav-homelink">HOME</a></li> */}
                 {MenuItems.map((item) => {
                     const {id,title,url} = item;
                     return (
