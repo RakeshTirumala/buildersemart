@@ -94,7 +94,7 @@ export default function LoadItems(){
         <div className="HomeItemsDiv">
             <h1 className="material-tag">~ Material ~</h1>
             <>
-                <center className="productslist">
+                <div className="productslist">
                     {
                         HPItems.map((item)=>{
                             const {_id,img, ItemName, AvailableIn, PageLink} = item;  
@@ -111,7 +111,7 @@ export default function LoadItems(){
                             )
                             })
                     }
-                </center>
+                </div>
             </>
         
         </div>

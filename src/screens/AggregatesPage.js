@@ -26,21 +26,23 @@ const Agg=()=>{
 
   const AGGdata = useSelector((state)=>state.allItems.items) 
 
-  const { width } = useWindowSize();
-  var [Width,SetWidth] = useState(width);
+  // const { width } = useWindowSize();
+  // var [Width,SetWidth] = useState(width);
 
-  useEffect(()=>{
-      if(width<950){
-          SetWidth(width)
-      }
-  }, [SetWidth, width])
+  // useEffect(()=>{
+  //     if(width<950){
+  //         SetWidth(width)
+  //     }
+  // }, [SetWidth, width])
+
+  const mediaQuery = window.matchMedia('(min-width: 400px)')
 
   return (
     <>
     <Title/>
     <NavBar/>
     {
-      Width>=950
+      mediaQuery.matches
       ?(
         <>
           <h1 className='agg-title'>Aggregates</h1>
