@@ -118,13 +118,6 @@ export default function BBItemScreen(){
                         <tr>
                             <th className="col2_2">
                                 <h1 className="col2_2">{BBdata.item_name}</h1>
-                                <p className="agg_p1">Enter the Required Quantity (Tons):</p>
-                                <input type="text" 
-                                id="inputValue1" 
-                                name="inputValue1"
-                                value={inputValue1}
-                                onChange={(e)=>setinputValue1(e.target.value)}>
-                                </input>
 
                                 <p className="agg_p1">Enter the Required no. of Pieces:</p>
                                 <input type="text" 
