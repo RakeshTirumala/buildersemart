@@ -6,11 +6,12 @@ import '../index.css';
 // import Popup from 'reactjs-popup';
 // import 'reactjs-popup/dist/index.css';
 // import axios from "axios";
-import Nav from './Nav.js'
+// import Nav from './Nav.js'
 // import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import emptycart from '../images/emptycart.png'
 import Title from "./Title";
+import NavBar from "./Nav.js";
 
 
 
@@ -66,12 +67,16 @@ export default function YourRfq(){
         navigate('/confirmationpage')
     }
 
+    const mediaQuery = window.matchMedia('(min-width: 400px)')
+
     return(
         <>
         <Title/>
-        <Nav/>
+        <NavBar/>
         <h1 className="agg-title">Your RFQ(s)</h1>
-            {
+        {
+            mediaQuery.matches
+            ?(
                 cartItems.length===0
                 ?(
                     <center>
@@ -126,14 +131,52 @@ export default function YourRfq(){
                         <button className="RqtBtn" onClick={()=>HandleConfirm()}>Request</button>
                     </>
                 )
-            }
+            )
+            :(
+                cartItems.length===0
+                ?(
+                    <center>
+                        <img src={emptycart} className="emptycart-img"></img>
+                    </center>
+                )
+                :(
+                    <>
+                    <center>
+                        {
+                            cartItems.map((Item)=>{
+                                const {item_name, img_link, item, details, loc, comp} = Item;
+                                return(
+                                    <table key={item} className="rfq-item-ph">
+                                        <tbody>
+                                            <tr>
+                                                <th>
+                                                    <img className="rfq-img-ph" src={img_link} alt="Loading..."></img>
+                                                </th>
+                                                <th>
+                                                    <h4 className="rfq-name-ph">{item_name}</h4>
+                                                    <h4 className="rfq-comp-ph">{comp}</h4>
+                                                    <h4 className="rfq-loc-ph">{loc}</h4>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    <h4 className="rfq-details-ph">{details}</h4>
+                                                    <button className="RemoveBtnRfq" 
+                                                    type="button" onClick={()=>removeItemHandler(item)}>Remove
+                                                    </button>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                )
+                            })
+                        }
+                    </center>
+                    <button className="RqtBtn-ph" onClick={()=>HandleConfirm()}>Request</button>
+                    </>
+                )
+            )
+        }
+
         </>
     )}
-
-{/* <Popup trigger={<button className="RqtBtn">Request</button>} position="bottom">
-            <h2>Confirmation</h2>
-            <p>You can enter your email or phone number or both.</p>
-            <form>
-
-            </form>
-</Popup> */}

@@ -35,19 +35,21 @@ export default function ItemScreen(){
 
     // console.log("aggdata",AGGdata)
 
-    var [Width,SetWidth] = useState(500);
-    const { width } = useWindowSize();
+    // var [Width,SetWidth] = useState(500);
+    // const { width } = useWindowSize();
 
-    useEffect(()=>{
-        SetWidth(width)
-    }, [SetWidth, width])
+    // useEffect(()=>{
+    //     SetWidth(width)
+    // }, [SetWidth, width])
+
+    const mediaQuery = window.matchMedia('(min-width: 400px)')
 
     return (
         <>
         <Title/>
         <NavBar/>
         {
-            Width>=950
+            mediaQuery.matches
             ?(
                 <>
                 <table className="item_table" key={AGGdata._id}>
@@ -80,7 +82,7 @@ export default function ItemScreen(){
                                 >
                                 </input>
                                 <br/>
-                                <button onClick={addToRfqHandler}>Add to RFQ</button>
+                                <button onClick={addToRfqHandler}  className="addToCart-btn">Add to RFQ</button>
                             </th>
                         </tr>
                     </tbody>
@@ -146,7 +148,7 @@ export default function ItemScreen(){
                                     >
                                     </input>
                                     <br/>
-                                    <button onClick={addToRfqHandler}>Add to RFQ</button>
+                                    <button onClick={addToRfqHandler}  className="addToCart-btn">Add to RFQ</button>
                             </th>
                         </tr>
                     </tbody>
@@ -156,20 +158,22 @@ export default function ItemScreen(){
                     <table>
                         <tbody>
                             <tr>
-                                {
-                                    companyData.aggComp.map((comp)=>{
-                                        const {img, compName} = comp;
-                                        return(
-                                            <>
-                                            <th className="comp-col">
-                                                <img src={img} className="comp-img"></img>
-                                                <h4>{compName}</h4>
-                                            </th>
-                                            <div></div>
-                                            </>
-                                        )
-                                    })
-                                }
+                                <div className="companies-ph">
+                                    {
+                                        companyData.aggComp.map((comp)=>{
+                                            const {img, compName} = comp;
+                                            return(
+                                                <>
+                                                <th className="comp-col">
+                                                    <img src={img} className="comp-img"></img>
+                                                    <h4>{compName}</h4>
+                                                </th>
+                                                <div></div>
+                                                </>
+                                            )
+                                        })
+                                    }
+                                </div>
                             </tr>
                         </tbody>
                     </table>
