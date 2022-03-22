@@ -110,7 +110,7 @@ export default function CmtItemScreen(){
                         <tr>
                             <th className="col2_2">
                                 <h1 className="col2_2">{CMTdata.item_name}</h1>
-                                <p className="agg_p1">Enter the Required Quantity (Tons):</p>
+                                <p className="agg_p1">Enter the Required Bags:</p>
                                 <input type="text" 
                                 id="inputValue1" 
                                 name="inputValue1"

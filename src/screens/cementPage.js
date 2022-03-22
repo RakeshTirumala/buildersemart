@@ -60,7 +60,7 @@ export default function CementPage(){
                             <section className="Items_List2">
                                 {cmtData.map((item) => {
                                     return (
-                                    <Link to={`/item/${item._id}`} key={item._id}><Item2 item={item}></Item2></Link>
+                                    <Link to={`/cmtitem/${item._id}`} key={item._id}><Item2 item={item}></Item2></Link>
                                     )
                                     })
                                 }
