@@ -539,6 +539,16 @@ font-size: medium;
   height: 50vh;
 }
 
+.loadingGif{
+  width: 90%;
+  height:90%;
+  margin-left: 120%;
+}
+.loadingGif2{
+  width: 150px;
+  height: 150px;
+  margin-left: 30%;
+}
 
 /* .bottom-info table{
   margin-left: 25%;

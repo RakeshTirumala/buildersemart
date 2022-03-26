@@ -10,9 +10,9 @@ import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import Title from "./Title";
 import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
-import useWindowSize from "./WindowSize";
+// import useWindowSize from "./WindowSize";
 import NavBar from "./Nav.js";
-
+import loading from '../images/loading.gif'
 
 
 export default function LoadItems(){
@@ -96,20 +96,36 @@ export default function LoadItems(){
             <>
                 <div className="productslist">
                     {
-                        HPItems.map((item)=>{
-                            const {_id,img, ItemName, AvailableIn, PageLink} = item;  
-                            return(
-                                <Link to={PageLink} className="HomeItem">
-                                <div key={_id}>
-                                    <div className="product" key={_id}>
-                                        <img src={img}></img>
-                                        <h1>{ItemName}</h1>
-                                        <h4>Available in: {AvailableIn}</h4>
-                                    </div>
+                        HPItems.length === 0
+                        ?(
+                            mediaQuery.matches
+                            ?(
+                                <div className="hpLoadingDiv">
+                                    <img src={loading} className="loadingGif"></img>
                                 </div>
-                                </Link>
                             )
-                            })
+                            :(
+                                <div>
+                                    <img src={loading} className="loadingGif2"></img>
+                                </div>
+                            )
+                        )
+                        :(
+                            HPItems.map((item)=>{
+                                const {_id,img, ItemName, AvailableIn, PageLink} = item;  
+                                return(
+                                    <Link to={PageLink} className="HomeItem">
+                                    <div key={_id}>
+                                        <div className="product" key={_id}>
+                                            <img src={img}></img>
+                                            <h1>{ItemName}</h1>
+                                            <h4>Available in: {AvailableIn}</h4>
+                                        </div>
+                                    </div>
+                                    </Link>
+                                )
+                                })
+                        )
                     }
                 </div>
             </>
