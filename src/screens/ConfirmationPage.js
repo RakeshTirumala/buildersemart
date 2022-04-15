@@ -38,9 +38,9 @@ export default function ConfirmationPage(){
         navigate('/')
     }
 
-    const lengthCheck=(phno_inp)=>{
-        if(phno_inp.target.value.length > phno_inp.target.maxLength){
-            phno_inp.target.value = phno_inp.target.value.slice(0, phno_inp.target.maxLength)
+    const lengthCheck=(setphno_inp)=>{
+        if(setphno_inp.target.value.length > setphno_inp.target.maxLength){
+            setphno_inp.target.value = setphno_inp.target.value.slice(0, setphno_inp.target.maxLength)
         }
     }
 
@@ -73,13 +73,13 @@ export default function ConfirmationPage(){
                                 onChange={(e)=>setemail_inp(e.target.value)}
                                 ></input>
                                 <h3>Phone number</h3>
-                                <input type={"tel"} className="phno_inp"
+                                <input type={"text"} className="phno_inp"
                                 id="phno_inp" 
                                 name="phno_inp"
                                 value={phno_inp}
                                 onChange={(e)=>setphno_inp(e.target.value.replace(/\D/g, ''))}
                                 maxLength="10"
-                                onInput={()=>lengthCheck(phno_inp)}
+                                onInput={()=>lengthCheck(setphno_inp)}
                                 ></input>
                                 <h3>Expected Delivery Date:</h3>
                                 <input
