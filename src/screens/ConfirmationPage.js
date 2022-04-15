@@ -77,7 +77,7 @@ export default function ConfirmationPage(){
                                 id="phno_inp" 
                                 name="phno_inp"
                                 value={phno_inp}
-                                onChange={(e)=>setphno_inp(e.target.value.replace(/\D/g, ''))}
+                                onChange={(e)=>setphno_inp(e.target.value)}
                                 ></input>
                                 <h3>Expected Delivery Date:</h3>
                                 <input
@@ -122,7 +122,7 @@ export default function ConfirmationPage(){
                             id="phno_inp" 
                             name="phno_inp"
                             value={phno_inp}
-                            onChange={(e)=>setphno_inp(e.target.value.replace(/\D/g, ''))}
+                            onChange={(e)=>setphno_inp(e.target.value)}
                             ></input>
                             <h3>Expected Delivery Date:</h3>
                             <input
