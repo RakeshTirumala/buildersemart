@@ -25,7 +25,7 @@ export default function ConfirmationPage(){
 
     const addToDb=(name,email_inp, phno_inp,date)=>{
         const id = 'ACS'+ Math.random().toString(16).slice(2);
-        const newOrder = {id:id,name:name,email:email_inp, phoneNo:phno_inp,date:date,orderedItems:cartItems, isDone:false};
+        const newOrder = {id:id,name:name,email:email_inp, phoneNo:Number(phno_inp),date:date,orderedItems:cartItems, isDone:false};
         axios.post('https://emartserver.herokuapp.com/api/orders', newOrder)
         // console.log(newOrder);
         dispatch(emptyCart(cartItems))
@@ -73,7 +73,7 @@ export default function ConfirmationPage(){
                                 onChange={(e)=>setemail_inp(e.target.value)}
                                 ></input>
                                 <h3>Phone number</h3>
-                                <input type={"tel"} className="phno_inp"
+                                <input type={"text"} className="phno_inp"
                                 id="phno_inp" 
                                 name="phno_inp"
                                 value={phno_inp}
