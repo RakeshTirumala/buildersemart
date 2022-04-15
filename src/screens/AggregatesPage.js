@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 // import Rfq_bar from './rfq_bar'
 // import Nav from './Nav.js'
 import Title from './Title';
-import useWindowSize from "./WindowSize";
+// import useWindowSize from "./WindowSize";
 import NavBar from './Nav.js';
  
 const Agg=()=>{
