@@ -42,7 +42,7 @@ export default function ConfirmationPage(){
     //     if(setphno_inp.target.value.length > setphno_inp.target.maxLength){
     //         setphno_inp.target.value = setphno_inp.target.value.slice(0, setphno_inp.target.maxLength)
     //     }
-    }
+    
 
     return(
         <>
